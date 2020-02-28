@@ -1,0 +1,2 @@
+# hammerspoonConfig
+hammerspoonConfig
