@@ -41,6 +41,7 @@ function obj:openLexico()
    browser:url("https://www.lexico.com/en/definition/" .. text):show()
    browser:closeOnEscape(true)
    browser:deleteOnClose(true)
+   browser:bringToFront(true)
 end
 
 function makeBrowser ()
