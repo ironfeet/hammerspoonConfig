@@ -3,7 +3,7 @@
 --- Show a popup window with the currently selected word in lexico
 ---
 
-local obj={}
+local obj = {}
 obj.__index = obj
 
 -- Metadata
@@ -45,8 +45,8 @@ function obj:openLexico()
 end
 
 function makeBrowser ()
-   local screen   = require"hs.screen"
-   local webview  = require"hs.webview"
+   local screen = require"hs.screen"
+   local webview = require"hs.webview"
 
    local mainScreenFrame = screen:primaryScreen():frame()
    browserFrame = {
