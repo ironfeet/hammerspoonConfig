@@ -1,0 +1,64 @@
+[
+  {
+    "Command": [],
+    "Constant": [],
+    "Constructor": [],
+    "Deprecated": [],
+    "Field": [],
+    "Function": [],
+    "Method": [
+      {
+        "def": "IFLookupSelection:openLexico()",
+        "desc": "Get the current selected text in the frontmost window and display a translation popup with the translation between the specified languages",
+        "doc": "Get the current selected text in the frontmost window and display a translation popup with the translation between the specified languages\n\nReturns:\n * The IFLookupSelection object",
+        "name": "openLexico",
+        "returns": [
+          " * The IFLookupSelection object"
+        ],
+        "signature": "IFLookupSelection:openLexico()",
+        "stripped_doc": "",
+        "type": "Method"
+      }
+    ],
+    "Variable": [
+      {
+        "def": "IFLookupSelection.logger",
+        "desc": "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "doc": "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "name": "logger",
+        "signature": "IFLookupSelection.logger",
+        "stripped_doc": "",
+        "type": "Variable"
+      }
+    ],
+    "desc": "Show a popup window with the currently selected word in lexicon, notes, online help",
+    "doc": "Show a popup window with the currently selected word in lexicon, notes, online help\n\nThe spoon uses hs.urlevent.openURL(\"dict://\" .. text) \n\nDownload: [https://github.com/Hammerspoon/Spoons/raw/master/Spoons/IFLookupSelection.spoon.zip](https://github.com/Hammerspoon/Spoons/raw/master/Spoons/IFLookupSelection.spoon.zip)",
+    "items": [
+      {
+        "def": "IFLookupSelection.logger",
+        "desc": "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "doc": "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "name": "logger",
+        "signature": "IFLookupSelection.logger",
+        "stripped_doc": "",
+        "type": "Variable"
+      },
+      {
+        "def": "IFLookupSelection:openLexico()",
+        "desc": "Get the current selected text in the frontmost window and display a translation popup with the translation between the specified languages",
+        "doc": "Get the current selected text in the frontmost window and display a translation popup with the translation between the specified languages\n\nReturns:\n * The IFLookupSelection object",
+        "name": "openLexicon",
+        "returns": [
+          " * The IFLookupSelection object"
+        ],
+        "signature": "IFLookupSelection:openLexicon()",
+        "stripped_doc": "",
+        "type": "Method"
+      }
+    ],
+    "name": "IFLookupSelection",
+    "stripped_doc": "\nThe spoon uses hs.urlevent.openURL(\"dict://\" .. text) \n\nDownload: [https://github.com/Hammerspoon/Spoons/raw/master/Spoons/IFLookupSelection.spoon.zip](https://github.com/Hammerspoon/Spoons/raw/master/Spoons/IFLookupSelection.spoon.zip)",
+    "submodules": [],
+    "type": "Module"
+  }
+]
