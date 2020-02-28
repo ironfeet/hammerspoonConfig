@@ -10,7 +10,7 @@ obj.__index = obj
 obj.name = "IFLookupSelection"
 obj.version = "0.1"
 obj.author = "IronFeet <ironfeet@hotmail.com>"
-obj.homepage = "https://github.com/Hammerspoon/Spoons"
+obj.homepage = "https://github.com/ironfeet/hammerspoonConfig"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
 
 --- IFLookupSelection.logger
@@ -36,7 +36,7 @@ end
 --- Returns:
 ---  * The IFLookupSelection object
 function obj:openLexico()
-   local text=current_selection()
+   local text = current_selection()
    local browser = makeBrowser();
    browser:url("https://www.lexico.com/en/definition/" .. text):show()
    browser:closeOnEscape(true)
