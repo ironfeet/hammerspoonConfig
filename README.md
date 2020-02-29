@@ -16,7 +16,7 @@
 
 ### Thanks
 
-    - [http://www.hammerspoon.org/](Hammerspoon)
+- [Hammerspoon](http://www.hammerspoon.org/)
 
 ## 中文
 
@@ -34,7 +34,7 @@
 
 #### 安装
 
-1. 安装 [http://www.hammerspoon.org/](Hammerspoon)
+1. 安装 [Hammerspoon](http://www.hammerspoon.org/)
 
 2. git clone https://github.com/ironfeet/hammerspoonConfig.git ~/.hammerspoon
 
@@ -84,4 +84,4 @@
 
 ### 感谢
 
-- [http://www.hammerspoon.org/](Hammerspoon)
+- [Hammerspoon](http://www.hammerspoon.org/)
