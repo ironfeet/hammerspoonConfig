@@ -25,7 +25,7 @@ obj.logger = hs.logger.new('IFLookupSelection')
 function current_selection()
    hs.eventtap.keyStroke({"cmd"}, "c")
    hs.timer.usleep(20000)
-   sel=hs.pasteboard.getContents()
+   sel = hs.pasteboard.getContents()
    return (sel or "")
 end
 

@@ -5,7 +5,8 @@ if not hspoon_list then
     "HSaria2",
     "KSheet",
     "IFLookupSelection",
-    "TerminalHere"
+    "TerminalHere",
+    "HotKeyList"
   }
 end
 
@@ -13,53 +14,57 @@ for _, v in pairs(hspoon_list) do
   hs.loadSpoon(v)
 end
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", "Configuration Reload", function()
   hs.reload()
 end)
 
 -- WinWin (SizeUp HotKeys)
 if spoon.WinWin then
   -- Side
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "left", function() spoon.WinWin:moveAndResize("halfleft") end, "Window ⬅") 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "right", function() spoon.WinWin:moveAndResize("halfright") end, "Window ➡") 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "up", function() spoon.WinWin:moveAndResize("halfup") end, "Window ⬆") 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "down", function() spoon.WinWin:moveAndResize("halfdown") end, "Window ⬇") 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "left", "Window ⬅", function() spoon.WinWin:moveAndResize("halfleft") end) 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "right", "Window ➡", function() spoon.WinWin:moveAndResize("halfright") end) 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "up", "Window ⬆", function() spoon.WinWin:moveAndResize("halfup") end) 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "down", "Window ⬇", function() spoon.WinWin:moveAndResize("halfdown") end) 
   -- Corner
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "left", function() spoon.WinWin:moveAndResize("cornerNW") end, "Window ↖") 
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "right", function() spoon.WinWin:moveAndResize("cornerSE") end, "Window ↘") 
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "up", function() spoon.WinWin:moveAndResize("cornerNE") end, "Window ↗") 
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "down", function() spoon.WinWin:moveAndResize("cornerSW") end, "Window ↙") 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "left", "Window ↖", function() spoon.WinWin:moveAndResize("cornerNW") end) 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "right", "Window ↘", function() spoon.WinWin:moveAndResize("cornerSE") end) 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "up", "Window ↗", function() spoon.WinWin:moveAndResize("cornerNE") end) 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "down", "Window ↙", function() spoon.WinWin:moveAndResize("cornerSW") end) 
   -- Stretch
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "C", function() spoon.WinWin:moveAndResize("center") end, "Window Center") 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function() spoon.WinWin:moveAndResize("maximize") end, "Window ↕↔") 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "C", "Window Center", function() spoon.WinWin:moveAndResize("center") end) 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", "Window ↕↔", function() spoon.WinWin:moveAndResize("maximize") end) 
   -- Screen
-  hs.hotkey.bind({"alt", "ctrl"}, "right", function() spoon.WinWin:moveToScreen("next") end, "Window ➡ 🖥") 
+  hs.hotkey.bind({"alt", "ctrl"}, "right", "Window ➡ 🖥", function() spoon.WinWin:moveToScreen("next") end) 
   -- Other
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", function() spoon.WinWin:undo() end, "Window Undo") 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", "Window Undo", function() spoon.WinWin:undo() end) 
 end
 
 -- HSaria2
 if spoon.HSaria2 then
   -- aria2c --enable-rpc --rpc-allow-origin-all -D
-  aria2_host = "http://localhost:6800/jsonrpc"
-  aria2_secret = ""
-  spoon.HSaria2:connectToHost(aria2_host, aria2_secret)
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "D", function() spoon.HSaria2:togglePanel() end)
+  aria2Host = "http://localhost:6800/jsonrpc"
+  aria2Secret = ""
+  spoon.HSaria2:connectToHost(aria2Host, aria2Secret)
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "D", "Toggle Aria2", function() spoon.HSaria2:togglePanel() end)
 end
 
 -- KSheet
 if spoon.KSheet then
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", function() spoon.KSheet:show() end)
-  hs.hotkey.bind({"alt", "ctrl"}, "K", function() spoon.KSheet:hide() end)
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", "Show Cheatsheet", function() spoon.KSheet:show() end)
+  hs.hotkey.bind({"alt", "ctrl"}, "K", "Hide Cheatsheet", function() spoon.KSheet:hide() end)
 end
 
 -- IFLookupSelection
 if spoon.IFLookupSelection then
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", function() spoon.IFLookupSelection:openLexico() end)
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", "Look up in Lexico", function() spoon.IFLookupSelection:openLexico() end)
 end
 
 if spoon.TerminalHere then
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function() spoon.TerminalHere:openTerminal() end)
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", "Terminal Here", function() spoon.TerminalHere:openTerminal() end)
+end
+
+if spoon.HotKeyList then
+  spoon.HotKeyList:refresh()
 end
 
 hs.alert.show("Config Reloaded")
