@@ -40,7 +40,7 @@ New spoons will be added according to my own needs. And I will also try making i
   - ⌃ ⌥ RIGHT: Move it to the next screen
   - ⌘ ⌃ ⌥ /: Undo
 
-2. 查英文释义
+2. Interpretation in English
 
   - ⌘ ⌃ ⌥ L: Look up the selected word in Lexico.com in a pop-up window
 
