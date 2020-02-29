@@ -4,7 +4,8 @@ if not hspoon_list then
     "WinWin",
     "HSaria2",
     "KSheet",
-    "IFLookupSelection"
+    "IFLookupSelection",
+    "TerminalHere"
   }
 end
 
@@ -55,6 +56,10 @@ end
 -- IFLookupSelection
 if spoon.IFLookupSelection then
   hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", function() spoon.IFLookupSelection:openLexico() end)
+end
+
+if spoon.TerminalHere then
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function() spoon.TerminalHere:openTerminal() end)
 end
 
 hs.alert.show("Config Reloaded")
