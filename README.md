@@ -1,2 +1,87 @@
 # hammerspoonConfig
-hammerspoonConfig
+
+## English
+
+### Why
+
+    TBD
+
+### How
+
+    TBD
+
+### What
+
+    TBD
+
+### Thanks
+
+    - [http://www.hammerspoon.org/](Hammerspoon)
+
+## 中文
+
+### 为什么
+
+    每一次更换新的电脑，都需要把常用工具重新装一遍。毕竟这些工具应用太好用了，我已经对他们形成依赖了。但随着依赖的工具越来越多，安装、个性化配置等等折腾一遍，占用我越来越多的时间。
+
+    而过去的半年里，我由于一些原因连续更换了三个电脑。这个安装配置工具应用的过程让我忍无可忍了（呃，我的确是个懒人）。于是我就想着，可否用一个工具能够尽可能多的满足这些工具的功能。于是发现了 Hammerspoon。
+
+    放在 Github 里面，完全是以后更换电脑了，可以迅速找到并安装配置好。本来打算设置成 private 的，后来想想 public 吧，说不定能帮助到和我一样的懒人呢
+
+    我会根据自己的需求不断增加新的 spoon，也会尽量挤出时间来让他变得更好配置没有那么晦涩，方便别人使用
+
+### 怎么用
+
+#### 安装
+
+    1. 安装 [http://www.hammerspoon.org/](Hammerspoon)
+
+    2. git clone https://github.com/ironfeet/hammerspoonConfig.git ~/.hammerspoon
+
+    3. Hammerspoon 中更新配置
+
+#### 更新
+
+    1. cd ~/.hammerspoon && git pull
+
+### 什么功能
+
+    1. 窗口操作
+
+        - ⌘ ⌃ ⌥ LEFT: 窗口靠屏幕左侧
+        - ⌘ ⌃ ⌥ RIGHT: 窗口靠屏幕右侧
+        - ⌘ ⌃ ⌥ UP: 窗口靠屏幕顶部
+        - ⌘ ⌃ ⌥ DOWN: 窗口靠屏幕底部
+
+        - ⇧ ⌃ ⌥ LEFT: 窗口靠屏幕左上角
+        - ⇧ ⌃ ⌥ RIGHT: 窗口靠屏幕右下角
+        - ⇧ ⌃ ⌥ UP: 窗口靠屏幕右上角
+        - ⇧ ⌃ ⌥ DOWN: 窗口靠屏左下角
+
+        - ⌘ ⌃ ⌥ C: 窗口居中
+        - ⌘ ⌃ ⌥ M: 窗口最大化
+        
+        - ⌃ ⌥ RIGHT: 窗口进入下一个屏幕
+        - ⌘ ⌃ ⌥ /: 窗口还原
+
+    2. 查英文释义
+
+        - ⌘ ⌃ ⌥ L: 弹出窗口在 Lexico.com 查询所选英文单词的英文释义
+
+    3. KSheet
+
+        - ⌘ ⌃ ⌥ K: 显示当前应用的快捷键列表
+        - ⌃ ⌥ K: 关闭当前应用的快捷键列表
+
+    4. Terminal Here
+
+        - ⌘ ⌃ ⌥ T: 用 iTerm 打开当前 Finder 中所展示的路径
+
+    5. 其他
+
+        - ⌘ ⌃ ⌥ R: 刷新 Hammerspoon 配置
+        - 点击任务栏中 ⌨️ 图标，可以查看 Hammerspoon 注册的所有快捷键列表
+
+### 感谢
+
+    - [http://www.hammerspoon.org/](Hammerspoon)
