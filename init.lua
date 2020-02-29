@@ -20,22 +20,22 @@ end)
 -- WinWin (SizeUp HotKeys)
 if spoon.WinWin then
   -- Side
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "left", function() spoon.WinWin:moveAndResize("halfleft") end) 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "right", function() spoon.WinWin:moveAndResize("halfright") end) 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "up", function() spoon.WinWin:moveAndResize("halfup") end) 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "down", function() spoon.WinWin:moveAndResize("halfdown") end) 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "left", function() spoon.WinWin:moveAndResize("halfleft") end, "Window ⬅") 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "right", function() spoon.WinWin:moveAndResize("halfright") end, "Window ➡") 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "up", function() spoon.WinWin:moveAndResize("halfup") end, "Window ⬆") 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "down", function() spoon.WinWin:moveAndResize("halfdown") end, "Window ⬇") 
   -- Corner
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "left", function() spoon.WinWin:moveAndResize("cornerNW") end) 
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "right", function() spoon.WinWin:moveAndResize("cornerSE") end) 
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "up", function() spoon.WinWin:moveAndResize("cornerNE") end) 
-  hs.hotkey.bind({"shift", "alt", "ctrl"}, "down", function() spoon.WinWin:moveAndResize("cornerSW") end) 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "left", function() spoon.WinWin:moveAndResize("cornerNW") end, "Window ↖") 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "right", function() spoon.WinWin:moveAndResize("cornerSE") end, "Window ↘") 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "up", function() spoon.WinWin:moveAndResize("cornerNE") end, "Window ↗") 
+  hs.hotkey.bind({"shift", "alt", "ctrl"}, "down", function() spoon.WinWin:moveAndResize("cornerSW") end, "Window ↙") 
   -- Stretch
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "C", function() spoon.WinWin:moveAndResize("center") end) 
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function() spoon.WinWin:moveAndResize("maximize") end) 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "C", function() spoon.WinWin:moveAndResize("center") end, "Window Center") 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function() spoon.WinWin:moveAndResize("maximize") end, "Window ↕↔") 
   -- Screen
-  hs.hotkey.bind({"alt", "ctrl"}, "right", function() spoon.WinWin:moveToScreen("next") end) 
+  hs.hotkey.bind({"alt", "ctrl"}, "right", function() spoon.WinWin:moveToScreen("next") end, "Window ➡ 🖥") 
   -- Other
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", function() spoon.WinWin:undo() end) 
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", function() spoon.WinWin:undo() end, "Window Undo") 
 end
 
 -- HSaria2
