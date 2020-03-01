@@ -60,7 +60,15 @@ function refresh()
 
   local microbreakItem = { title = "Microbreaks: " .. obj.microbreakTime .. " second(s) break in every " .. obj.microbreakInterval .. " minute(s)" }
   table.insert(menuItem, microbreakItem)
-  local breakItem = { title = "Breaks: " .. obj.breakTime .. " minute(s) break after " .. obj.microbreakCount .. " micobreak(s)" }
+  local breakItem = {
+    title = "Breaks: "
+      .. obj.breakTime
+      .. " minute(s) break after "
+      .. obj.microbreakCount
+      .. " micobreak(s) AKA in "
+      .. (obj.microbreakInterval * (obj.microbreakCount + 1))
+      .. " minute(s)"
+    }
   table.insert(menuItem, breakItem)
 
   obj.curTime = obj.curTime + 1
