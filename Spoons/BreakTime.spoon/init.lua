@@ -69,20 +69,20 @@ function refresh()
     obj.curMicrobreakCount = obj.curMicrobreakCount + 1
     if obj.curMicrobreakCount > obj.microbreakCount then
       hs.alert.show("B Start")
+      obj.curMicrobreakCount = 0
     else
       hs.alert.show("MB Start")
-      obj.curMicrobreakCount = 0
     end
 
-    obj.curTime = 0
+    obj.curTime = obj.curTime - obj.microbreakInterval
 
   end
-
-  obj.logger:w("CurTime: " .. obj.curTime .. "  CurMicrobreakTime: " .. obj.curMicrobreakCount)
 
   local nextBreakTime = obj.microbreakInterval - obj.curTime + 1
   local nextBreakItem = { title = "Next break will be in " .. nextBreakTime .. " minute(s)" }
   table.insert(menuItem, nextBreakItem)
+
+  obj.logger:w("CurTime: " .. obj.curTime .. "  CurMicrobreakTime: " .. obj.curMicrobreakCount .. " NextBreak: " .. nextBreakTime .. " CurMicroBreakCount: " .. obj.curMicrobreakCount)
 
   obj.menubar:setMenu(menuItem)
 
