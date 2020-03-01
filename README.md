@@ -14,11 +14,19 @@ New spoons will be added according to my own needs. And I will also try making i
 
 ### How
 
+#### Install
+
 1. Install [Hammerspoon](http://www.hammerspoon.org/)
 
 2. git clone https://github.com/ironfeet/hammerspoonConfig.git ~/.hammerspoon
 
 3. Reload the configuration of Hammerspoon
+
+#### Update
+
+1. cd ~/.hammerspoon && git pull
+
+2. Reload the configuration of Hammerspoon
 
 ### What
 
@@ -70,7 +78,7 @@ New spoons will be added according to my own needs. And I will also try making i
 
 而过去的半年里，我由于一些原因连续更换了三个电脑。这个安装配置工具应用的过程让我忍无可忍了（呃，我的确是个懒人）。于是我就想着，可否用一个工具能够尽可能多的满足这些工具的功能。于是发现了 Hammerspoon。
 
-放在 Github 里面，这样以后只要有方便就可以方便找到并完成安装配置。本来打算设置成 private 的，后来想想 public 吧，说不定能帮助到和我一样的懒人呢
+放在 Github 里面，这样以后只要有需要就可以方便找到并完成安装配置。本来打算设置成 private 的，后来想想 public 吧，说不定能帮助到和我一样的懒人呢
 
 我会根据自己的需求不断增加新的 spoon，也会尽量挤出时间来让他变得更好配置没有那么晦涩，方便别人使用
 
@@ -87,6 +95,8 @@ New spoons will be added according to my own needs. And I will also try making i
 #### 更新
 
 1. cd ~/.hammerspoon && git pull
+
+2. Hammerspoon 中更新配置
 
 ### 什么功能
 
