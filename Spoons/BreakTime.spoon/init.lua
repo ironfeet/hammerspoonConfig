@@ -28,6 +28,8 @@ obj.breakTime = 1
 obj.curMicrobreakCount = 0
 obj.curTime = 0
 
+obj.Timer = nil
+
 ----------------------------------------------------------------------
 
 --- BreakTime:createMenu()
@@ -35,11 +37,13 @@ obj.curTime = 0
 --- create the menu for BreakTime
 ---
 function obj:createMenu()
+
   obj.menubar:setTitle("🧍")
   obj.menubar:setTooltip("BreakTime Info")
   refresh()
 
-  hs.timer.doEvery(60, refresh)
+  obj.Timer = hs.timer.new(60, refresh)
+  obj.Timer:start()
 
 end
 
@@ -56,11 +60,11 @@ function refresh()
 
   local microbreakItem = { title = "Microbreaks: " .. obj.microbreakTime .. " second(s) break in every " .. obj.microbreakInterval .. " minute(s)" }
   table.insert(menuItem, microbreakItem)
-  local breakItem = { title = "Breaks: " .. obj.breakTime .. " minute(s) break after " .. obj.microbreakCount .. " micobreaks" }
+  local breakItem = { title = "Breaks: " .. obj.breakTime .. " minute(s) break after " .. obj.microbreakCount .. " micobreak(s)" }
   table.insert(menuItem, breakItem)
 
   obj.curTime = obj.curTime + 1
-  if obj.curTime == obj.microbreakInterval then
+  if obj.curTime > obj.microbreakInterval then
   
     obj.curMicrobreakCount = obj.curMicrobreakCount + 1
     if obj.curMicrobreakCount > obj.microbreakCount then
@@ -70,13 +74,13 @@ function refresh()
       obj.curMicrobreakCount = 0
     end
 
-    obj.curTime = obj.curTime - obj.microbreakInterval
+    obj.curTime = 0
 
   end
 
-  hs.notify.new({title="BreakTime", informativeText="CurTime: " .. obj.curTime .. "  CurMicrobreakTime: " .. obj.curMicrobreakCount}):send()
+  obj.logger:w("CurTime: " .. obj.curTime .. "  CurMicrobreakTime: " .. obj.curMicrobreakCount)
 
-  local nextBreakTime = obj.microbreakInterval - obj.curTime
+  local nextBreakTime = obj.microbreakInterval - obj.curTime + 1
   local nextBreakItem = { title = "Next break will be in " .. nextBreakTime .. " minute(s)" }
   table.insert(menuItem, nextBreakItem)
 
