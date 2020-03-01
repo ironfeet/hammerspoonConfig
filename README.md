@@ -65,6 +65,11 @@ New spoons will be added according to my own needs. And I will also try making i
 
   - ⌘ ⌃ ⌥ R: Reload Hammerspoon's configuration
   - Click the ⌨️ icon to show the list of the hotkeys registered by Hammerspoon
+  
+### TODO
+
+  - New spoon: BreakTime
+    - One break time reminder
 
 ### Thanks
 
@@ -135,6 +140,11 @@ New spoons will be added according to my own needs. And I will also try making i
 
   - ⌘ ⌃ ⌥ R: 刷新 Hammerspoon 配置
   - 点击任务栏中 ⌨️ 图标，可以查看 Hammerspoon 注册的所有快捷键列表
+  
+### TODO
+
+  - 新的 spoon: BreakTime
+    - 休息提醒，避免长时间盯着电脑
 
 ### 感谢
 
