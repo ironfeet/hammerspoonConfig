@@ -20,10 +20,10 @@ obj.logger = hs.logger.new('BreakTime')
 
 obj.menubar = hs.menubar.new()
 
-obj.microbreakTime = 10
-obj.microbreakInterval = 10
+obj.microbreakTime = 60
+obj.microbreakInterval = 20
 obj.microbreakCount = 2
-obj.breakTime = 1
+obj.breakTime = 5
 
 obj.curMicrobreakCount = 0
 obj.curTime = 0
