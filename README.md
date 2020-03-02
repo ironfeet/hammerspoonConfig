@@ -54,8 +54,7 @@ New spoons will be added according to my own needs. And I will also try making i
 
 3. KSheet
 
-  - ⌘ ⌃ ⌥ K: Show the hotkeys' list of the current app
-  - ⌃ ⌥ K: Hide the hotkeys' list of the current app
+  - ⌘ ⌃ ⌥ K: Hold to show the hotkeys' list of the current app
 
 4. Terminal Here (Make sure that iTerm have been installed)
 
@@ -129,8 +128,7 @@ New spoons will be added according to my own needs. And I will also try making i
 
 3. KSheet
 
-  - ⌘ ⌃ ⌥ K: 显示当前应用的快捷键列表
-  - ⌃ ⌥ K: 关闭当前应用的快捷键列表
+  - ⌘ ⌃ ⌥ K: 长按以显示当前应用的快捷键列表
 
 4. Terminal Here (需要自行安装 iTerm)
 

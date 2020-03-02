@@ -50,8 +50,7 @@ end
 
 -- KSheet
 if spoon.KSheet then
-  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", "Show Cheatsheet", function() spoon.KSheet:show() end)
-  hs.hotkey.bind({"alt", "ctrl"}, "K", "Hide Cheatsheet", function() spoon.KSheet:hide() end)
+  hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", "Show Cheatsheet", function() spoon.KSheet:show() end, function() spoon.KSheet:hide() end)
 end
 
 -- IFLookupSelection
