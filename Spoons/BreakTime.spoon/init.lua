@@ -20,10 +20,10 @@ obj.logger = hs.logger.new('BreakTime')
 
 obj.menubar = hs.menubar.new()
 
-obj.microbreakTime = 60
+obj.microbreakTime = 60 -- Second(s)
 obj.microbreakInterval = 20
 obj.microbreakCount = 2
-obj.breakTime = 5
+obj.breakTime = 5 -- Minute(s)
 
 obj.curMicrobreakCount = 0
 obj.curTime = 0
@@ -76,10 +76,28 @@ function refresh()
   
     obj.curMicrobreakCount = obj.curMicrobreakCount + 1
     if obj.curMicrobreakCount > obj.microbreakCount then
-      hs.alert.show("B Start")
+      hs.alert.show(obj.breakTime .. " minute microbreak starts")
+
+      local browser = makeBrowser();
+      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html"):show()
+      hs.timer.doAfter(obj.breakTime * 60, function()
+        if browser ~= nil then 
+          browser:delete(); 
+        end 
+      end)
+
       obj.curMicrobreakCount = 0
     else
-      hs.alert.show("MB Start")
+      hs.alert.show(obj.microbreakTime .. " second microbreak starts")
+
+      local browser = makeBrowser();
+      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html"):show()
+      hs.timer.doAfter(obj.microbreakTime, function() 
+        if browser ~= nil then 
+          browser:delete(); 
+        end 
+      end)
+
     end
 
     obj.curTime = obj.curTime - obj.microbreakInterval
@@ -94,6 +112,32 @@ function refresh()
 
   obj.menubar:setMenu(menuItem)
 
+end
+
+function makeBrowser ()
+  local screen = require"hs.screen"
+  local webview = require"hs.webview"
+
+  local mainScreenFrame = screen:primaryScreen():frame()
+  browserFrame = {
+     x = mainScreenFrame.x,
+     y = mainScreenFrame.y,
+     h = mainScreenFrame.h,
+     w = mainScreenFrame.w
+  }
+
+  local options = {
+      developerExtrasEnabled = true,
+  }
+
+  -- local browser = webview.new(browserFrame, options):windowStyle(1+2+4+8)
+  local browser = webview.new(browserFrame, options):windowStyle(1+2+128)
+    :closeOnEscape(true)
+    :deleteOnClose(true)
+    :bringToFront(true)
+    :allowTextEntry(true)
+
+  return browser
 end
 
 return obj
