@@ -46,7 +46,7 @@ function createMenu()
   obj.menubar:setTooltip("BreakTime Info")
   refresh()
 
-  obj.Timer = hs.timer.new(60, refresh)
+  obj.Timer = hs.timer.new(5, refresh)
   obj.Timer:start()
 
 end
@@ -69,7 +69,7 @@ function refresh()
       .. obj.breakTime
       .. " minute(s) break after "
       .. obj.microbreakCount
-      .. " micobreak(s) that means in "
+      .. " microbreak(s) that means in "
       .. (obj.microbreakInterval * (obj.microbreakCount + 1))
       .. " minute(s)"
     }
@@ -95,8 +95,8 @@ function refresh()
       hs.alert.show(obj.microbreakTime .. " second microbreak starts")
 
       local browser = makeBrowserOfBreakTime();
-      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.micobreakTime - 1)):show()
-      hs.timer.doAfter(obj.micobreakTime, function() 
+      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.microbreakTime - 1)):show()
+      hs.timer.doAfter(obj.microbreakTime, function() 
         if browser ~= nil then 
           browser:delete(); 
         end 
