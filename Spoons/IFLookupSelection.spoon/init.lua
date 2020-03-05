@@ -37,14 +37,14 @@ end
 ---  * The IFLookupSelection object
 function obj:openLexico()
    local text = current_selection()
-   local browser = makeBrowser();
+   local browser = makeBrowserOfIFLookupSelection();
    browser:url("https://www.lexico.com/en/definition/" .. text):show()
    browser:closeOnEscape(true)
    browser:deleteOnClose(true)
    browser:bringToFront(true)
 end
 
-function makeBrowser ()
+function makeBrowserOfIFLookupSelection ()
    local screen = require"hs.screen"
    local webview = require"hs.webview"
 
