@@ -2,6 +2,10 @@
 
 ## English
 
+### What's New
+
+  - 2010-03-06 New spoon: BreakTime: One break time reminder
+
 ### Why
 
 Every time I changed my computer, I needed to install all of the tool apps again. For convenience, they became an inevitable part of my computer. The number of tool apps grew, it took me too much time installing and configuring them and drove me mad
@@ -60,21 +64,28 @@ New spoons will be added according to my own needs. And I will also try making i
 
   - ⌘ ⌃ ⌥ T: opens iTerm to the current directory in the current Finder window.
 
-5. Others
+5. BreakTime
+
+  - No Hot Keys.
+
+6. Others
 
   - ⌘ ⌃ ⌥ R: Reload Hammerspoon's configuration
   - Click the ⌨️ icon to show the list of the hotkeys registered by Hammerspoon
   
 ### TODO
 
-  - New spoon: BreakTime
-    - One break time reminder
+  - Complete the spoon documentation
 
 ### Thanks
 
 - [Hammerspoon](http://www.hammerspoon.org/)
 
 ## 中文
+
+### 最新
+
+  - 2010-03-06 新 spoon: BreakTime: 休息提醒，避免长时间盯着电脑 
 
 ### 为什么
 
@@ -134,15 +145,18 @@ New spoons will be added according to my own needs. And I will also try making i
 
   - ⌘ ⌃ ⌥ T: 用 iTerm 打开当前 Finder 中所展示的路径
 
-5. 其他
+5. BreakTime
+
+  - 没有热键
+
+6. 其他
 
   - ⌘ ⌃ ⌥ R: 刷新 Hammerspoon 配置
   - 点击任务栏中 ⌨️ 图标，可以查看 Hammerspoon 注册的所有快捷键列表
   
 ### TODO
 
-  - 新的 spoon: BreakTime
-    - 休息提醒，避免长时间盯着电脑
+  - 完善这个 spoon 的文档
 
 ### 感谢
 
