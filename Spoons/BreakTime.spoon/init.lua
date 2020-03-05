@@ -32,11 +32,15 @@ obj.Timer = nil
 
 ----------------------------------------------------------------------
 
---- BreakTime:createMenu()
+--- BreakTime:start()
 --- Method
---- create the menu for BreakTime
+--- start BreakTime
 ---
-function obj:createMenu()
+function obj:start()
+  createMenu()
+end
+
+function createMenu()
 
   obj.menubar:setTitle("🧍")
   obj.menubar:setTooltip("BreakTime Info")

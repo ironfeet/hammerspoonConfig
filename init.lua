@@ -71,7 +71,7 @@ end
 
 -- BreakTime
 if spoon.BreakTime then
-  spoon.BreakTime:createMenu()
+  spoon.BreakTime:start()
 end
 
 hs.alert.show("Config Reloaded")
