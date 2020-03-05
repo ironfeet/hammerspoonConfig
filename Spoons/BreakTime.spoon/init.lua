@@ -65,7 +65,7 @@ function refresh()
       .. obj.breakTime
       .. " minute(s) break after "
       .. obj.microbreakCount
-      .. " micobreak(s) AKA in "
+      .. " micobreak(s) that means in "
       .. (obj.microbreakInterval * (obj.microbreakCount + 1))
       .. " minute(s)"
     }
@@ -79,8 +79,8 @@ function refresh()
       hs.alert.show(obj.breakTime .. " minute microbreak starts")
 
       local browser = makeBrowser();
-      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html"):show()
-      hs.timer.doAfter(obj.breakTime * 60, function()
+      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.microbreakTime - 1)):show()
+      hs.timer.doAfter(obj.microbreakTime, function()
         if browser ~= nil then 
           browser:delete(); 
         end 
@@ -91,8 +91,8 @@ function refresh()
       hs.alert.show(obj.microbreakTime .. " second microbreak starts")
 
       local browser = makeBrowser();
-      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html"):show()
-      hs.timer.doAfter(obj.microbreakTime, function() 
+      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.breakTime * 60 - 1)):show()
+      hs.timer.doAfter(obj.breakTime * 60, function() 
         if browser ~= nil then 
           browser:delete(); 
         end 
@@ -108,7 +108,7 @@ function refresh()
   local nextBreakItem = { title = "Next break will be in " .. nextBreakTime .. " minute(s)" }
   table.insert(menuItem, nextBreakItem)
 
-  obj.logger:w("CurTime: " .. obj.curTime .. "  CurMicrobreakTime: " .. obj.curMicrobreakCount .. " NextBreak: " .. nextBreakTime .. " CurMicroBreakCount: " .. obj.curMicrobreakCount)
+  -- obj.logger:w("CurTime: " .. obj.curTime .. "  CurMicrobreakTime: " .. obj.curMicrobreakCount .. " NextBreak: " .. nextBreakTime .. " CurMicroBreakCount: " .. obj.curMicrobreakCount)
 
   obj.menubar:setMenu(menuItem)
 
@@ -136,6 +136,7 @@ function makeBrowser ()
     :deleteOnClose(true)
     :bringToFront(true)
     :allowTextEntry(true)
+    :transparent(true)
 
   return browser
 end
