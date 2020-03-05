@@ -46,7 +46,7 @@ function createMenu()
   obj.menubar:setTooltip("BreakTime Info")
   refresh()
 
-  obj.Timer = hs.timer.new(5, refresh)
+  obj.Timer = hs.timer.new(60, refresh)
   obj.Timer:start()
 
 end
