@@ -80,11 +80,11 @@ function refresh()
   
     obj.curMicrobreakCount = obj.curMicrobreakCount + 1
     if obj.curMicrobreakCount > obj.microbreakCount then
-      hs.alert.show(obj.breakTime .. " minute microbreak starts")
+      hs.alert.show(obj.breakTime .. " minute break starts")
 
       local browser = makeBrowserOfBreakTime();
-      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.microbreakTime - 1)):show()
-      hs.timer.doAfter(obj.microbreakTime, function()
+      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.breakTime * 60 - 1)):show()
+      hs.timer.doAfter(obj.breakTime * 60, function()
         if browser ~= nil then 
           browser:delete(); 
         end 
@@ -95,8 +95,8 @@ function refresh()
       hs.alert.show(obj.microbreakTime .. " second microbreak starts")
 
       local browser = makeBrowserOfBreakTime();
-      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.breakTime * 60 - 1)):show()
-      hs.timer.doAfter(obj.breakTime * 60, function() 
+      browser:url("file://" .. hs.spoons.scriptPath() .. "BreakTime.html?time=" .. (obj.micobreakTime - 1)):show()
+      hs.timer.doAfter(obj.micobreakTime, function() 
         if browser ~= nil then 
           browser:delete(); 
         end 
