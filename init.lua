@@ -6,7 +6,8 @@ if not hspoon_list then
     "KSheet",
     "IFLookupSelection",
     "TerminalHere",
-    "HotKeyList"
+    "HotKeyList",
+    "BreakTime"
   }
 end
 
@@ -58,12 +59,19 @@ if spoon.IFLookupSelection then
   hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", "Look up in Lexico", function() spoon.IFLookupSelection:openLexico() end)
 end
 
+-- TerminalHere
 if spoon.TerminalHere then
   hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", "Terminal Here", function() spoon.TerminalHere:openTerminal() end)
 end
 
+-- HotKeyList
 if spoon.HotKeyList then
   spoon.HotKeyList:refresh()
+end
+
+-- BreakTime
+if spoon.BreakTime then
+  spoon.BreakTime:createMenu()
 end
 
 hs.alert.show("Config Reloaded")

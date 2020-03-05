@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <title></title>
+  <link href="css/login1.css" mce_href="css/login1.css" rel="stylesheet" type="text/css" />
+  <script language="javascript" type="text/javascript">
+    var i = getAllUrlParams().time;
+    var intervalid;
+    intervalid = setInterval("fun()", 1000);
+
+    function fun() {
+      if (i == 0) {
+        clearInterval(intervalid);
+      }
+      document.getElementById("mes").innerHTML = i;
+      i--;
+    }
+
+    function getAllUrlParams(url) {
+
+      var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+      var obj = {};
+      if (queryString) {
+        queryString = queryString.split('#')[0];
+        var arr = queryString.split('&');
+        for (var i = 0; i < arr.length; i++) {
+
+          var a = arr[i].split('=');
+          var paramNum = undefined;
+          var paramName = a[0].replace(/\[\d*\]/, function (v) {
+
+            paramNum = v.slice(1, -1);
+            return '';
+
+          });
+
+          var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+
+          paramName = paramName.toLowerCase();
+          paramValue = paramValue.toLowerCase();
+
+          if (obj[paramName]) {
+
+            if (typeof obj[paramName] === 'string') {
+              obj[paramName] = [obj[paramName]];
+            }
+
+            if (typeof paramNum === 'undefined') {
+              obj[paramName].push(paramValue);
+            }
+
+            else {
+              obj[paramName][paramNum] = paramValue;
+            }
+          }
+
+          else {
+            obj[paramName] = paramValue;
+          }
+        }
+      }
+
+      return obj;
+    }
+  </script>
+</head>
+
+<body style="background-color:rgba(0, 225, 0, 0.3); width: 100%; height: 100%; margin: 0; padding: 0;">
+  <div id="errorfrm" style="color: red; text-align: center; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);">
+    <div id="error">
+      <H1>Take a break!</H1>
+      <H1><span id="mes"></span> second(s) left</H1>
+      <image src="BreakTime.jpg" style="height: 70%;" />
+    </div>
