@@ -72,7 +72,7 @@ function refresh()
       .. " microbreak(s) that means in "
       .. (obj.microbreakInterval * (obj.microbreakCount + 1))
       .. " minute(s)"
-    }
+  }
   table.insert(menuItem, breakItem)
 
   obj.curTime = obj.curTime + 1
